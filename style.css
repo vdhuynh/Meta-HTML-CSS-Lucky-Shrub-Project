@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+:root {
+    --off-white: hsl(45, 29%, 97%);
+    --dark-turq: hsl(175, 56%, 25%);
+    --med-turq: hsl(155, 45%, 68%);
+    --garden-green: hsl(160, 60%, 17%);
+    --border-rad: 1rem;
+}
+
+/*  
+Global selector to reset properties 
+and create consistency across browsers.
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #CCCCCC;
+    ;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #F5F5F5;
+    font-family: Quicksand,
+        'Lato Light',
+        sans-serif;
+    margin: 2rem 5% 2rem 5%;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 1rem;
+}
+
+h1+p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/*** header and nav content ***/
+
+header>img {
+    display: block;
+    /* img default is 'inline-block'. Used to put it on its own line. */
+    margin: 0 auto 1.5rem;
+    /* top = 0, left and right = auto, bottom = 1.5rem */
+    width: 6vw;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    background-color: var(--garden-green);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: var(--border-rad);
+}
+
+nav li {
+    flex: 1;
+}
+
+li a {
+    text-decoration: none;
+    transition: ease;
+}
+
+li a:hover {
+    transition-duration: 0.5s;
+    background-color: var(--dark-turq);
+    padding: 0.5rem;
+    border-radius: var(--border-rad);
+    color: var(--off-white);
+}
+
+/*** section and generic article content ***/
+
+section {
+    display: flex;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+section>a {
+    display: flex;
+    flex: 1;
+}
+
+section a:nth-of-type(2) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+article {
+    border-radius: var(--border-rad);
+    background-color: var(--garden-green);
+    background-image: linear-gradient(to bottom right, var(--garden-green), var(--garden-green), var(--garden-green), var(--dark-turq));
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+article>div {
+    padding: 0.5rem;
+}
+
+/*** main-article ***/
+
+.main-article {
+    display: flex;
+    max-height: 60vh;
+    overflow: auto;
+}
+
+.main-article img {
+    object-fit: cover;
+    max-width: 35vw;
+    border-radius: var(--border-rad) 0 0 var(--border-rad);
+}
+
+/*** sub-article ***/
+
+.sub-article {
+    flex: 1;
+    min-width: 10vw;
+    transition: transform 0.5s;
+}
+
+.sub-article img {
+    object-fit: cover;
+    height: 20ch;
+    max-width: 100%;
+    width: 100%;
+    border-radius: var(--border-rad) var(--border-rad) 0 0;
+}
+
+.sub-article div p {
+    padding: 0.25rem 0.25rem 0.5rem 0.25rem;
+}
+
+.sub-article:hover {
+    transform: scale(1.025);
+}
+
+/*** footer content ***/
+
+footer {
+    display: flex;
+    align-items: end;
+}
+
+footer div {
+    flex: 1;
+}
+
+footer img {
+    height: auto;
+    width: 2rem;
+}
+
+footer div p {
+    color: var(--dark-turq);
+}
+
+.copyright {
+    position: absolute;
+    right: 5vw;
+}
+
+/*** media queries ***/
+
+/* Changed the definition blocks to match the rest of the CSS */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.75rem;
+    }
+
+    li a:hover {
+        padding: 0.25rem;
+    }
+
+    nav ul {
+        font-size: 0.75rem;
+        padding: 0.25rem;
+    }
+
+    section {
+        flex-direction: column;
+    }
+
+    section a:nth-of-type(2) {
+        margin: 0.5rem 0 0.5rem 0;
+    }
+
+    .sub-article img {
+        height: 10vh;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, between 600px and 768px) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    li a:hover {
+        padding: 0.25rem;
+    }
+
+    nav ul {
+        font-size: 1rem;
+        padding: 0.25rem;
+    }
+
+    section {
+        flex-direction: column;
+    }
+
+    section a:nth-of-type(2) {
+        margin: 1rem 0 1rem 0;
+    }
+
+    .sub-article img {
+        height: 15vh;
+    }
+}
+
+/* Medium devices (landscape tablets, between 768 and 992px) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    section {
+        flex-direction: column;
+    }
+
+    section a:nth-of-type(2) {
+        margin: 1rem 0 1rem 0;
+    }
+}
+
+#email {
+    color: var(--dark-turq) transition: color 0.3s, font-size 0.3s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#email:active {
+    color: purple;
+
+}
